@@ -33,7 +33,21 @@ def savings(gross_pay, tax_rate, expenses):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+
+    def savings(gross_pay, tax_rate, expenses):
+    # Calculate the amount of taxes paid by applying the tax rate to the gross pay.
+    taxes = gross_pay * tax_rate
+    
+    # Calculate the after-tax pay by subtracting the taxes from the gross pay.
+    after_tax_pay = gross_pay - taxes
+    
+    # Calculate the savings by subtracting the expenses from the after-tax pay.
+    savings = after_tax_pay - expenses
+    
+    # Return the savings as an integer.
+    return int(savings)
+
+
 
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
@@ -68,7 +82,19 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    
+    
+    def material_waste(total_material, material_units, num_jobs, job_consumption):
+    material_consumed = num_jobs * job_consumption
+    remaining_material = total_material - material_consumed
+    return str(remaining_material) + material_units
+    
+remaining_material = material_waste(10, "kg", 5, 1) # you may change values here
+# Print the remaining material
+print(remaining_material)  # "5kg"
+    
+    
+    
 
 def interest(principal, rate, periods):
     '''Interest.
@@ -98,7 +124,19 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    
+    
+    import math
+def interest(principal, rate, periods):
+    # Calculate the amount of interest
+    interest = principal * rate * periods
+
+    # Calculate the final value of the investment
+    final_value = principal + interest
+
+    # Round down the final value and return it
+    return math.floor(final_value)
+    
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
@@ -130,4 +168,20 @@ def body_mass_index(weight, height):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    
+    
+    def body_mass_index(weight, height):
+    # Convert the weight from pounds to kilograms
+    weight_kg = weight * 0.453592
+
+    # Convert the height from feet and inches to meters
+    height_m = (height[0] * 12 + height[1]) * 0.0254
+
+    # Calculate the BMI
+    bmi = weight_kg / (height_m ** 2)
+
+    return bmi
+    
+bmi = body_mass_index(150, [5, 10])
+# Print the BMI
+print(bmi)  # 21.522520596061597
